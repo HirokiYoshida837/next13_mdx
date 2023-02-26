@@ -4,13 +4,25 @@ import {Container, Row, Col, Link} from '@nextui-org/react';
 import Sidebar from "@/components/Sidebar";
 import TableOfContent from "@/components/TableOfContent";
 import Footer from "@/layouts/Footer";
+import {Route} from "next/dist/server/router";
+import React, {PropsWithChildren, useEffect, useState} from "react";
+import {getHeadings, Heading} from "@/libs/utils/heading";
 
-type MyComponentProps = {
-    children: React.ReactNode;
+export interface DocsLayoutProp {
+    routes: Route[];
 }
 
 
-const DocsLayout: React.FC<MyComponentProps> = ({children}) => {
+const DocsLayout: React.FC<PropsWithChildren<DocsLayoutProp>> = ({routes, children}) => {
+
+    // TOCで今どこか表示させるために使う
+    const [headings, setHeadings] = useState<Heading[]>([]);
+    useEffect(() => {
+        setHeadings(getHeadings)
+    }, [])
+
+
+
 
     return (
         <>
