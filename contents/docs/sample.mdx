@@ -29,12 +29,28 @@ animosa surgit: Iuli [ille](http://artem-subit.net/): Stygias dempto coniugis
 fidae, quaerens Lycurgum!
 
 
+### example codes.
+
 ```
 hello world
 ```
 
 ```bash
 npm install react
+```
+
+```tsx
+export const getStaticPaths: GetStaticPaths = async () => {
+
+    // pathにするためのdocumentのリスト
+    const documents = getDocuments();
+
+    return {
+        paths: documents,
+        fallback: false
+    }
+}
+
 ```
 
 

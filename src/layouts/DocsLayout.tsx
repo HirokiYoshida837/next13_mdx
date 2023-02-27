@@ -22,8 +22,6 @@ const DocsLayout: React.FC<PropsWithChildren<DocsLayoutProp>> = ({routes, childr
     }, [])
 
 
-
-
     return (
         <>
             <NavBar/>
@@ -40,32 +38,31 @@ const DocsLayout: React.FC<PropsWithChildren<DocsLayoutProp>> = ({routes, childr
                 <Row justify="center" align="center">
 
 
-                    <Col css={{
-                        width: "32%",
-                        display: "none",
-                        "@md": {
-                            display: "block",
-                        },
-                    }}>
+                    {/*<Col css={{*/}
+                    {/*    width: "32%",*/}
+                    {/*    display: "none",*/}
+                    {/*    "@md": {*/}
+                    {/*        display: "block",*/}
+                    {/*    },*/}
+                    {/*}}>*/}
 
-                        <Fixed
-                            className="docs__left-sidebar"
-                            css={{
-                                maxHeight: "calc(100vh - 4rem)",
-                                overflow: "auto",
-                                zIndex: "$2",
-                                pb: "$28",
-                                "&::-webkit-scrollbar": {
-                                    width: "0px",
-                                },
-                            }}
-                            offset={92}
-                            shadow={true}
-                        >
-                            <Sidebar/>
-                        </Fixed>
+                    {/*    <Fixed*/}
+                    {/*        className="docs__left-sidebar"*/}
+                    {/*        css={{*/}
+                    {/*            maxHeight: "calc(100vh - 4rem)",*/}
+                    {/*            overflow: "auto",*/}
+                    {/*            zIndex: "$2",*/}
+                    {/*            pb: "$28",*/}
+                    {/*            "&::-webkit-scrollbar": {*/}
+                    {/*                width: "0px",*/}
+                    {/*            },*/}
+                    {/*        }}*/}
+                    {/*        offset={92}*/}
+                    {/*    >*/}
+                    {/*        <Sidebar/>*/}
+                    {/*    </Fixed>*/}
 
-                    </Col>
+                    {/*</Col>*/}
 
                     <Col className="docs__center"
                          css={{
@@ -103,9 +100,8 @@ const DocsLayout: React.FC<PropsWithChildren<DocsLayoutProp>> = ({routes, childr
                                 },
                             }}
                             offset={92}
-                            shadow={true}
                         >
-                            <TableOfContent/>
+                            <TableOfContent headings={headings}/>
 
                         </Fixed>
                     </Col>

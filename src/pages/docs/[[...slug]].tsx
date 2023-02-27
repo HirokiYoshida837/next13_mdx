@@ -14,6 +14,12 @@ import {serialize} from "next-mdx-remote/serialize";
 import * as rehypeAutoLinkHeadings from 'rehype-autolink-headings'
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import MDXComponents from "@/components/mdx";
+
+
+const components = {
+    ...MDXComponents,
+};
 
 
 interface Props {
@@ -34,10 +40,8 @@ const Home: React.FC<Props> = ({routes, currentRoute, source}) => {
     return (
         <>
             <DocsLayout routes={routes}>
-                {slug}
-
-
-                {source && <MDXRemote {...source}/>}
+                {/*{slug}*/}
+                {source && <MDXRemote {...source} components={components}/>}
             </DocsLayout>
         </>
     )
